@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoZone — quality auto parts, accessories and essentials for every drive.">
+  <title>AutoZone | Auto Parts & Accessories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar"><div class="wrap topbar-inner"><span>⚙ Built for the road ahead</span><span>Free shipping on orders over $99 <b>·</b> Easy 30-day returns</span></div></div>
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="#home" aria-label="AutoZone home"><span class="brand-mark">A</span><span>AUTO<span>ZONE</span><small>PARTS & ACCESSORIES</small></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <nav id="mainNav">
+        <a href="#home">Home</a><a href="#products">Shop Parts</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="accountBtn" title="Account">♙</button>
+        <button class="icon-btn" id="wishlistBtn" title="Wishlist">♡<i id="wishCount">0</i></button>
+        <a class="cart-link" href="#cart">🛒 <span>Cart</span><b class="cart-count" id="cartCount">0</b></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="wrap hero-content">
+        <div class="eyebrow"><span></span> YOUR VEHICLE. OUR PRIORITY.</div>
+        <h1>KEEP YOUR<br><em>DRIVE ALIVE.</em></h1>
+        <p>Reliable parts. Trusted brands. Everything your vehicle needs to go further.</p>
+        <div class="hero-buttons"><a class="btn btn-red" href="#products">SHOP ALL PARTS <b>→</b></a><a class="btn btn-outline" href="#categories">EXPLORE CATEGORIES</a></div>
+        <div class="hero-stats"><div><strong>2,500+</strong><small>QUALITY PARTS</small></div><div><strong>30 DAY</strong><small>RETURNS</small></div><div><strong>100%</strong><small>DRIVE CONFIDENCE</small></div></div>
+      </div>
+      <div class="hero-tag">EST. FOR EVERY JOURNEY <span>///</span></div>
+    </section>
+
+    <section class="vehicle-strip">
+      <div class="wrap vehicle-inner"><div><strong>FIND PARTS THAT FIT</strong><small>Choose your vehicle to check compatibility.</small></div>
+        <select id="vehicleSelect" aria-label="Select vehicle"><option value="All">Select vehicle</option><option>Honda City</option><option>Maruti Swift</option><option>Hyundai Creta</option><option>Tata Nexon</option><option>Mahindra Thar</option></select>
+        <button class="btn btn-dark" id="fitBtn">FIND MY PARTS →</button>
+      </div>
+    </section>
+
+    <section class="section wrap" id="categories">
+      <div class="section-heading"><div><span class="kicker">SHOP BY CATEGORY</span><h2>PARTS FOR EVERY <em>PURPOSE.</em></h2></div><a href="#products" class="text-link">VIEW ALL PARTS →</a></div>
+      <div class="category-grid">
+        <button class="category-card cat-engine" data-category="engine"><span>⚙</span><b>ENGINE PARTS</b><small>Filters, plugs & more</small><i>↗</i></button>
+        <button class="category-card cat-brakes" data-category="brakes"><span>◉</span><b>BRAKES & TIRES</b><small>Stop. Grip. Go.</small><i>↗</i></button>
+        <button class="category-card cat-light" data-category="lighting"><span>✦</span><b>LIGHTING & ELECTRICAL</b><small>See and be seen</small><i>↗</i></button>
+        <button class="category-card cat-accessories" data-category="accessories"><span>▦</span><b>ACCESSORIES</b><small>Make it yours</small><i>↗</i></button>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="wrap">
+        <div class="section-heading"><div><span class="kicker">THE RIGHT PART, RIGHT HERE</span><h2>FEATURED <em>PRODUCTS.</em></h2></div><span class="product-note">Curated essentials for your vehicle.</span></div>
+        <div class="filters">
+          <label class="search-box">⌕ <input id="searchInput" type="search" placeholder="Search parts, brands, keywords..."></label>
+          <select id="categoryFilter"><option value="all">All categories</option><option value="engine">Engine parts</option><option value="brakes">Brakes & tires</option><option value="lighting">Lighting & electrical</option><option value="accessories">Accessories</option></select>
+          <select id="brandFilter"><option value="all">All brands</option></select>
+          <select id="vehicleFilter"><option value="all">All vehicles</option><option>Honda City</option><option>Maruti Swift</option><option>Hyundai Creta</option><option>Tata Nexon</option><option>Mahindra Thar</option></select>
+          <select id="sortFilter"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="rating">Top rated</option></select>
+        </div>
+        <div class="results-line"><span id="resultCount">Showing products</span><button id="clearFilters">CLEAR FILTERS ×</button></div>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="deal-band"><div class="wrap deal-inner"><div><span class="kicker">THE ROAD-READY EVENT</span><h2>GEAR UP. <em>SAVE MORE.</em></h2><p>Get 15% off selected essentials. Use code <b>ROAD15</b> at checkout.</p></div><a class="btn btn-red" href="#products">SHOP THE DEAL →</a></div></section>
+
+    <section class="section wrap split-feature">
+      <div class="feature-image"><div class="image-label">BUILT FOR THE LONG HAUL <b>AZ / 01</b></div></div>
+      <div class="feature-copy"><span class="kicker">WHY AUTOZONE</span><h2>CONFIDENCE IN<br>EVERY <em>COMPONENT.</em></h2><p>From routine maintenance to the upgrades you have been planning, find dependable parts selected to help keep your vehicle performing at its best.</p>
+        <ul class="benefit-list"><li><b>✓</b><span><strong>Quality you can trust</strong><small>Carefully selected products from recognized brands.</small></span></li><li><b>✓</b><span><strong>Fitment made simple</strong><small>Use vehicle filters to narrow down compatible parts.</small></span></li><li><b>✓</b><span><strong>Support that moves with you</strong><small>Clear order details and a simple checkout experience.</small></span></li></ul>
+      </div>
+    </section>
+
+    <section class="testimonial"><div class="wrap testimonial-inner"><span class="quote-mark">“</span><blockquote>The right part makes every journey better. Find what fits, get it sorted, and get back out there.</blockquote><span class="kicker">THE AUTOZONE PROMISE</span></div></section>
+
+    <section class="section wrap" id="cart">
+      <div class="section-heading"><div><span class="kicker">YOUR SELECTION</span><h2>SHOPPING <em>CART.</em></h2></div><span class="product-note">Review your parts before checkout.</span></div>
+      <div id="cartContent" class="cart-layout"></div>
+    </section>
+
+    <section class="section checkout-section" id="checkout">
+      <div class="wrap">
+        <div class="section-heading"><div><span class="kicker">ALMOST THERE</span><h2>SECURE <em>CHECKOUT.</em></h2></div><span class="product-note">Demo checkout — no real payment is processed.</span></div>
+        <div class="checkout-layout">
+          <form id="checkoutForm" class="checkout-form">
+            <h3>01 / SHIPPING DETAILS</h3>
+            <div class="form-grid"><label>Full name<input name="name" required placeholder="Your name"></label><label>Email address<input name="email" type="email" required placeholder="you@example.com"></label><label>Phone number<input name="phone" required pattern="[0-9 +()-]{10,}" placeholder="+91 98765 43210"></label><label>PIN code<input name="pin" required pattern="[0-9]{6}" placeholder="6-digit PIN"></label><label class="full">Street address<textarea name="address" required rows="2" placeholder="House number, street, area"></textarea></label><label>City<input name="city" required placeholder="City"></label><label>State<input name="state" required placeholder="State"></label></div>
+            <h3>02 / PAYMENT METHOD</h3>
+            <div class="payment-options"><label><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label><label><input type="radio" name="payment" value="UPI (Demo)"> UPI (Demo)</label><label><input type="radio" name="payment" value="Card (Demo)"> Card (Demo)</label></div>
+            <button class="btn btn-red full-btn" type="submit">PLACE DEMO ORDER →</button><p class="fine-print">This is a student project. Payment options are simulated and no money will be charged.</p>
+          </form>
+          <aside class="checkout-summary" id="checkoutSummary"><h3>ORDER SUMMARY</h3><div id="checkoutItems"></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">₹0.00</strong></div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap account-section" id="account">
+      <div class="section-heading"><div><span class="kicker">YOUR GARAGE</span><h2>MY <em>ACCOUNT.</em></h2></div></div>
+      <div class="account-layout"><div class="account-card" id="accountPanel"><h3>WELCOME TO AUTOZONE</h3><p>Sign in or create a demo account to view your order history and saved vehicle.</p><form id="loginForm"><label>Name<input name="name" required placeholder="Your name"></label><label>Email<input name="email" type="email" required placeholder="you@example.com"></label><button class="btn btn-dark full-btn">SIGN IN / REGISTER →</button></form><small>Demo authentication only. Details stay in this browser.</small></div><div class="account-card"><h3>ORDER HISTORY</h3><div id="orderHistory" class="muted">Sign in to see your demo orders.</div></div></div>
+    </section>
+
+    <section class="section about-section" id="about"><div class="wrap about-inner"><div><span class="kicker">OUR STORY</span><h2>MADE FOR PEOPLE<br>WHO <em>LOVE THE DRIVE.</em></h2></div><p>AutoZone is a concept automotive e-commerce experience built around one simple idea: finding the right auto part should feel straightforward. We bring essential categories, product details, vehicle fitment guidance and a simple shopping journey together in one place.</p></div></section>
+
+    <section class="section wrap contact-section" id="contact"><div class="section-heading"><div><span class="kicker">WE'RE HERE TO HELP</span><h2>GET IN <em>TOUCH.</em></h2></div></div><div class="contact-grid"><div><h3>NEED A HAND?</h3><p>Questions about a product or your demo order? Send us a message.</p><p>✉ support@autozone-demo.com<br>☎ +91 90000 12345<br>⌖ India · Online store concept</p></div><form id="contactForm" class="contact-form"><label>Your name<input required placeholder="Name"></label><label>Email<input required type="email" placeholder="Email"></label><label>Message<textarea required rows="4" placeholder="How can we help?"></textarea></label><button class="btn btn-red">SEND MESSAGE →</button></form></div></section>
+  </main>
+
+  <footer><div class="wrap footer-main"><div class="brand footer-brand"><span class="brand-mark">A</span><span>AUTO<span>ZONE</span><small>PARTS & ACCESSORIES</small></span></div><p>Parts that keep you moving.<br>Built as a frontend-only internship project.</p><div><b>EXPLORE</b><a href="#products">Shop parts</a><a href="#about">About us</a><a href="#contact">Contact</a></div><div><b>HELP</b><a href="#cart">Shopping cart</a><a href="#checkout">Checkout</a><a href="#account">My account</a></div></div><div class="wrap footer-bottom"><span>© 2026 AutoZone Demo. Student project for WD-EC-006.</span><span>DESIGNED FOR THE ROAD <b>///</b></span></div></footer>
+
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
